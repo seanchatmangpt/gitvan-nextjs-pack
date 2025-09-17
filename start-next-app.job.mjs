@@ -4,11 +4,11 @@ import { execSync } from "node:child_process";
 import { join } from "pathe";
 import { existsSync } from "node:fs";
 
-const logger = createLogger("job:nextjs-startup");
+const logger = createLogger("job:start-next-app");
 
 export default defineJob({
   meta: {
-    name: "nextjs:startup",
+    name: "start-next-app",
     description: "Installs dependencies and starts Next.js development server",
     version: "1.0.0",
     category: "development",
@@ -25,7 +25,7 @@ export default defineJob({
       logger.error("Project directory not found: " + projectPath);
       return {
         success: false,
-        message: "Project directory not found. Run nextjs:create-project first.",
+        message: "Project directory not found. Run create-next-app first.",
         projectPath
       };
     }
