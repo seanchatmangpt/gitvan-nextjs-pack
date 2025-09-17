@@ -1,0 +1,20 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  // GitVan generated config from GitHub pack
+  env: {
+    GITVAN_VERSION: '{{ gitvanVersion }}',
+    PROJECT_NAME: '{{ projectName }}',
+    PACK_SOURCE: 'github'
+  }
+};
+
+module.exports = nextConfig;
